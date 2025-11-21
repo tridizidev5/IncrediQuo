@@ -1,0 +1,162 @@
+/* Section wrapper */
+.section.latest-posts {
+  padding: 48px 60px 64px;
+  background-color: #fdf9fb;          /* same soft bg as other sections */
+
+  /* subtle fade-up when section appears */
+  opacity: 0;
+  transform: translateY(26px);
+  animation: latestPostsFadeUp 0.8s ease-out forwards;
+}
+
+/* center whole block */
+.latest-container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.latest-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #08153a;
+  margin: 0 0 26px;
+}
+
+/* 3-column grid */
+.latest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Card */
+.latest-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.14);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  /* interaction + hover */
+  cursor: pointer;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+/* hover: lift the card */
+.latest-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 46px rgba(15, 23, 42, 0.22);
+}
+
+/* Image */
+.latest-card__image-wrap {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+}
+
+.latest-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* zoom image slightly on hover */
+.latest-card:hover .latest-card__image {
+  transform: scale(1.06);
+}
+
+/* Content */
+.latest-card__content {
+  padding: 16px 18px 18px;
+}
+
+.latest-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ff3b5c;
+  margin: 0 0 14px;
+  transition: color 0.25s ease;
+}
+
+/* title color slightly deeper on hover */
+.latest-card:hover .latest-card__title {
+  color: #e62f4e;
+}
+
+/* Meta row */
+.latest-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.latest-card__author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0f172a;
+  transition: color 0.25s ease;
+}
+
+.latest-card__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.latest-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.latest-card__date {
+  color: #6b7280;
+  transition: color 0.25s ease;
+}
+
+/* on hover, text gets slightly more contrast */
+.latest-card:hover .latest-card__author {
+  color: #020617;
+}
+
+.latest-card:hover .latest-card__date {
+  color: #4b5563;
+}
+
+/* fade-up animation */
+@keyframes latestPostsFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .latest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .section.latest-posts {
+    padding: 36px 20px 44px;
+  }
+
+  .latest-grid {
+    grid-template-columns: 1fr;
+  }
+}

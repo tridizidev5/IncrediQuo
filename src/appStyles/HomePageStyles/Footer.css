@@ -1,0 +1,303 @@
+/* ===== MAIN FOOTER WRAPPER ===== */
+.footer {
+  position: relative;
+  color: #f9fafb;
+  padding: 95px 60px 26px;
+  overflow: hidden;
+  background-color: #022447; /* solid navy */
+  margin-top: -2px;          /* overlap the line from previous section */
+}
+
+/* WHITE CURVE – narrow droplet like reference */
+.footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -4px;                 /* start slightly above to hide seam */
+  width: 150%;               /* a bit wider so edges never show */
+  height: 270px;             /* slightly taller to compensate for top shift */
+  background-color: #ffffff;
+  transform: translateX(-10%);
+  z-index: 0;
+
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 8%,
+    96% 8.5%,
+    92% 9%,
+    88% 9.5%,
+    84% 10%,
+    80% 10.5%,
+    76% 11%,
+    72% 11.5%,
+    68% 12%,
+    64% 12.5%,
+    60% 13%,
+    56% 14%,
+    54% 16%,
+    52% 19%,
+    50% 23%,
+    48% 27%,
+    46% 31%,
+    44% 35%,
+    42% 39%,
+    40% 42%,
+    38% 44%,
+    36% 43%,
+    34% 41%,
+    32% 38%,
+    30% 35%,
+    28% 32%,
+    26% 29%,
+    24% 27%,
+    22% 25%,
+    20% 23.5%,
+    18% 22.5%,
+    16% 21.5%,
+    14% 21%,
+    12% 20.5%,
+    10% 20%,
+    8% 19.5%,
+    4% 18.8%,
+    0% 18%
+  );
+}
+
+/* content container (aligned under curve) */
+.footer-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;         /* above white shape */
+  padding-top: 65px;  /* moves content away from the curve */
+
+  /* fade-up footer content, not the wave */
+  opacity: 0;
+  transform: translateY(24px);
+  animation: footerFadeUp 0.85s ease-out forwards;
+}
+
+@keyframes footerFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === TOP ROW (brand + columns) === */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 96px;
+}
+
+/* left brand block */
+.footer-brand {
+  max-width: 260px;
+}
+
+/* === LOGO AREA === */
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.footer-logo:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.footer-logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background-color: #ffe8f0; /* soft pink circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.footer-logo:hover .footer-logo-mark {
+  transform: scale(1.05);
+}
+
+.footer-logo-mark img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.footer-logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* description text */
+.footer-description {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #d1e0ff;
+  margin: 0 0 22px;
+}
+
+/* LinkedIn square */
+.footer-social {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background-color: #ffffff;
+  color: #022447;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.footer-social:hover {
+  background-color: #ffe8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
+}
+
+.footer-copy-left {
+  font-size: 12px;
+  color: #d1e0ff;
+}
+
+/* right side columns */
+.footer-links {
+  display: flex;
+  gap: 80px;
+}
+
+.footer-column h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff6a7a;
+  margin: 0 0 6px;
+  position: relative;
+}
+
+.footer-column h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 32px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: #ff6a7a;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 12px 0 0;
+  margin: 0;
+}
+
+.footer-column li {
+  font-size: 13px;
+  color: #e5edff;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.footer-column li + li {
+  margin-top: 4px;
+}
+
+/* hover on footer links */
+.footer-column li:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+/* === BOTTOM ROW === */
+.footer-bottom {
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 26px;
+  font-size: 12px;
+  color: #d1e0ff;
+}
+
+.footer-bottom-links span {
+  cursor: pointer;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.footer-bottom-links span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background-color: #d1e0ff;
+  transition: width 0.25s ease;
+}
+
+.footer-bottom-links span:hover {
+  color: #ffffff;
+}
+
+.footer-bottom-links span:hover::after {
+  width: 100%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .footer-inner {
+    padding-top: 50px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-links {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    padding-top: 36px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

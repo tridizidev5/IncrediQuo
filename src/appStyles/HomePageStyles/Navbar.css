@@ -1,0 +1,194 @@
+/* ===== NAVBAR WRAPPER ===== */
+.navbar {
+  position: fixed;          /* stay at top while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 70px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* subtle shadow */
+
+  /* subtle fade-down on load */
+  animation: navbarFadeDown 0.6s ease-out;
+}
+
+/* small fade-down on first paint */
+@keyframes navbarFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== LEFT — logo image + text ===== */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #022447;
+
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar__logo img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;  /* show the full navy circle with lightning */
+  transition: transform 0.25s ease;
+}
+
+/* logo hover: tiny scale for feedback */
+.navbar__logo:hover {
+  transform: translateY(-1px);
+}
+
+.navbar__logo:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== CENTER — nav links ===== */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar__links a {
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  color: #022447;
+  text-decoration: none;
+  transition: color 0.25s ease;   /* smooth text color */
+}
+
+/* hover color + underline */
+.navbar__links a:hover {
+  color: #ff6a7a;
+}
+
+.navbar__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #ff6a7a;
+  transition: width 0.25s ease;
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+
+/* ===== RIGHT — contact button ===== */
+.navbar__button {
+  padding: 10px 30px;
+  border-radius: 999px;
+  background: #022447;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.navbar__button:hover {
+  background: #001c38;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.navbar__button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets / small laptops */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 16px 32px;
+  }
+
+  .navbar__links {
+    gap: 28px;
+  }
+}
+
+/* Small tablets & big phones */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 18px;
+    flex-wrap: wrap;            /* allow 2 rows */
+    row-gap: 10px;
+  }
+
+  /* first row: logo left, button right */
+  .navbar__logo {
+    font-size: 16px;
+  }
+
+  .navbar__button {
+    padding: 8px 20px;
+    margin-left: auto;          /* push button to the right on first row */
+  }
+
+  /* second row: nav links, full width */
+  .navbar__links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .navbar__links a {
+    font-size: 14px;
+  }
+}
+
+/* Very small phones – stack nicely */
+@media (max-width: 520px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .navbar__logo {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .navbar__button {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .navbar__links {
+    width: 100%;
+    justify-content: flex-start;
+    column-gap: 18px;
+    row-gap: 6px;
+  }
+}
