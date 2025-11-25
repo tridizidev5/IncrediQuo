@@ -33,6 +33,7 @@ import { UpdateBlog } from "./components/BlogUpdation/BlogUpdation";
 import CareerCreation from "./components/careerCreation/careerCreation";
 import SmallCard from "./components/managingCareers/managingCareers";
 import CareerUpdate from "./components/careerCreation/updationCareerpage";
+import SingleBlogPage from "./components/SingleBlogPage/SingleBlogPage";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -142,6 +143,8 @@ function App() {
           />
                   <Route path="/createBlog" element={<CreateBlog/>}/>
                   <Route path="/manageblogs" element={<Manageblogs/>}/>
+                            <Route path="/blog/:blogId" element={<SingleBlogPage />} />
+
                   <Route path="/blog-updation" element={<UpdateBlog/>}/>
                   <Route path="/createCareer" element={<CareerCreation/>}/>
                   <Route path="/managecareers" element={<SmallCard/>}/>
