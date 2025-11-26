@@ -8,10 +8,9 @@ const Hero = ({ onOpenContact }) => {
     <section id="home" className="hero">
       <div className="hero__inner">
         <div className="hero__content">
-          <h1 className="hero__title">Lorem ipsum content is dummy text</h1>
+          <h1 className="hero__title">Transcriptions That Speak Your Accuracy</h1>
           <p className="hero__subtitle">
-            Provide a network for all your needs with ease and fun using NetONE
-            discover interesting features from us.
+            IncrediQuo Solutions offers professional transcription services with exceptional accuracy. Whether it's corporate meetings, academic lectures, market research, podcasts, or legal discussions, we deliver high-quality transcripts that are precise, secure, and fast.
           </p>
           <button className="hero__button" onClick={onOpenContact}>
             Get Started

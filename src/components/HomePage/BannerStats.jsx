@@ -12,14 +12,12 @@ const BannerStats = () => {
       <div className="banner__inner">
         <div className="banner__text">
           <h2>
-            It is a long established fact that a reader
+            Flexible Work Modes Designed for Your 
             <br />
-            will be distra by the
+            Every Deadline
           </h2>
           <p>
-            It is a long established fact that a reader will be distra by the
-            readable content of a page when looking at its layout, when looking
-            at its layout.
+            At IncrediQuo Solutions, we adapt to your pace not the other way around. Whether you need fast, real-time accuracy or structured delivery, our flexible service modes ensure your transcription and language solutions arrive exactly when you need them.
           </p>
           <button className="banner__button" onClick={scrollToContact}>
             Get Started

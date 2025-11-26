@@ -23,16 +23,10 @@ const ClosedCaptionHero = () => {
           <p className="ts-hero__eyebrow">Closed Captioning &amp; Subtitling</p>
 
           <h1 className="ts-hero__title">
-            Lorem Ipsum Content is the
-            <br />
-            Dummy text
+            Precision Captioning & Subtitles for a Truly Inclusive Audience
           </h1>
-
           <p className="ts-hero__description">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed.
+           Make your videos accessible, accurate, and globally ready with our expertly crafted captions and multilingual subtitles. We ensure clarity, timing precision, and compliance. so every viewer understands your story.
           </p>
 
           {/* Vision and Goal card images */}

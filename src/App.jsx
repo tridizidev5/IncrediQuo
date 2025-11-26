@@ -26,6 +26,10 @@ import AdditionalSupportServicePage from "./components/AdditionalSupportService/
 
 // careers page
 import Careers from "./components/Career/Careers";
+
+// terms page
+import TermsPage from "./components/Terms/TermsPage";
+
 import "./appStyles/AppLayout.css";
 import { CreateBlog } from "./components/BlogCreationPage/blogcreation";
 import { Manageblogs } from "./components/ManageBlogs/Manageblogs";

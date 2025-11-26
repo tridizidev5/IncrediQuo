@@ -191,22 +191,21 @@
 }
 
 /* ===== DROPDOWN (Our Services) ===== */
-
-/* ===== DROPDOWN (Our Services) ===== */
 .dropdown {
   position: relative;
   cursor: pointer;
 }
 
+/* TITLE */
 .dropdown__title {
-  position: relative; /* for underline pseudo-element */
+  position: relative;
   font-size: 15px;
   font-weight: 500;
   color: #022447;
   transition: color 0.25s ease;
 }
 
-/* underline effect same as normal links */
+/* underline */
 .dropdown__title::after {
   content: "";
   position: absolute;
@@ -227,44 +226,51 @@
   width: 100%;
 }
 
-/* dropdown menu panel */
+/* ✅ FIXED DROPDOWN PANEL */
 .dropdown__menu {
   position: absolute;
-  top: calc(100% + 10px);   /* directly under the title – no gap */
+  top: 100%;                 /* directly below title */
   left: 50%;
-  transform: translate(-50%, 8px);  /* small initial offset for animation */
+  transform: translateX(-50%);
+  margin-top: 6px;           /* safe spacing without hover break */
+
   background: #00244b;
   padding: 32px;
   border-radius: 26px;
   width: 430px;
+
   display: flex;
   flex-direction: column;
   gap: 26px;
+
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+
+  transition: opacity 0.2s ease, visibility 0.2s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* show menu on hover – stays open while mouse is inside */
+/* ✅ stays open while hovering title OR menu */
 .dropdown:hover .dropdown__menu,
 .dropdown__menu:hover {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
-  transform: translate(-50%, 0);
 }
 
-/* menu options (base style) */
+/* menu options */
 .dropdown__menu a {
   font-size: 20px;
   font-weight: 450;
   text-decoration: none;
   color: #ffffff;
-  padding: 14px 18px;      /* keep space same for all */
-  border-radius: 14px;     /* so hover has smooth pill */
+  padding: 14px 18px;
+  border-radius: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* hovered option turns pink */
+/* hover highlight */
 .dropdown__menu a:hover {
   background: #ffe8f2;
   color: #00244b;

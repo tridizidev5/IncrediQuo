@@ -25,17 +25,13 @@ const TranscriptionHero = () => {
           <p className="ts-hero__eyebrow">Transcription Services</p>
 
           <h1 className="ts-hero__title">
-            Lorem Ipsum Content is the
+           Precision-Driven Language 
             <br />
-            Dummy text
+            Services You Can Trust
           </h1>
 
           <p className="ts-hero__description">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed, Lorem Ipsum is that it has a
-            more-or-less normal distribution of letters, as opposed
+           IncrediQuo Solutions delivers high-accuracy transcription, captioning, summarisation, and language support designed for modern business needs. Fast, reliable, and powered by expert professionals.
           </p>
 
           {/* CARDS — only images */}

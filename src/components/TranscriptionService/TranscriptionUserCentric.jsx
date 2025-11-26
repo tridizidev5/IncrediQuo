@@ -50,7 +50,7 @@ const TranscriptionUserCentric = () => {
       <div className="ts-usercentric__inner">
         <h2 className="ts-usercentric__title">Make every step user-centric</h2>
         <p className="ts-usercentric__subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipis elit
+          Smart, reliable, and high-quality solutions for every need
         </p>
 
         {/* top row: 3 columns */}
@@ -61,9 +61,7 @@ const TranscriptionUserCentric = () => {
             </div>
             <h3>Legal</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-              proin faucibus nibh et sagittis a. Lacinia purus ac amet.
-            </p>
+Accurate, confidential, and legally compliant documentation you can rely on.            </p>
           </article>
 
           <article className="ts-usercentric__item">
@@ -72,8 +70,7 @@ const TranscriptionUserCentric = () => {
             </div>
             <h3>Financial</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-              proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+             Clear, precise, and data-driven support for all financial workflows.
             </p>
           </article>
 
@@ -83,8 +80,7 @@ const TranscriptionUserCentric = () => {
             </div>
             <h3>Medical</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-              proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+              Reliable and patient-safe documentation tailored for healthcare accuracy.
             </p>
           </article>
         </div>
@@ -99,8 +95,7 @@ const TranscriptionUserCentric = () => {
             </div>
             <h3>Media</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-              proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+           Fast, creative, and production-ready solutions for dynamic media needs..
             </p>
           </article>
 
@@ -110,8 +105,7 @@ const TranscriptionUserCentric = () => {
             </div>
             <h3>Academic</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-              proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+             Structured, clear, and research-friendly support for academic excellence.
             </p>
           </article>
         </div>
