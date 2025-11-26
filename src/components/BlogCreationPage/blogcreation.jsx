@@ -1,4 +1,3 @@
-
 import "./blogcreation.css";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState, convertToRaw } from "draft-js";
@@ -62,23 +61,23 @@ export const CreateBlog = () => {
     if (isSubmitting) return;
     setIsSubmitting(true);
 
-    if (!image) {
-      alert("Please select an image.");
-      setIsSubmitting(false);
-      return;
-    }
+    // if (!image) {
+    //   alert("Please select an image.");
+    //   setIsSubmitting(false);
+    //   return;
+    // }
 
     try {
-      const imageRef = storageRef(storage, `blogs/${Date.now()}-${image.name}`);
-      const uploadTask = await uploadBytes(imageRef, image);
-      const imageUrl = await getDownloadURL(uploadTask.ref);
+      // const imageRef = storageRef(storage, blogs/${Date.now()}-${image.name});
+      // const uploadTask = await uploadBytes(imageRef, image);
+      // const imageUrl = await getDownloadURL(uploadTask.ref);
 
       const newBlogRef = push(ref(database, "blogs"));
       await set(newBlogRef, {
         title,
         content,
         DepartmentOfblog,
-        image_url: imageUrl,
+        // image_url: imageUrl,
         blog_content: blogContent,
         author_name: authorName,
         created_at: new Date().toISOString(),
