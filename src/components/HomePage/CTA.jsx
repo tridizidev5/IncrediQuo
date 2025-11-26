@@ -12,14 +12,12 @@ const CTA = () => {
       <section className="cta-wrapper">
         <div className="cta-card">
           <h2 className="cta-title">
-            Daily guidance crafted <br />
-            specifically for your goals.
+            Get Accurate Transcripts  <br />
+            Faster - Every Time
           </h2>
 
           <p className="cta-text">
-            Figma ipsum component variant main layer. Arrow arrow variant arrow
-            object component slice. Pen select rectangle font selection frame
-            draft.
+           Professional transcription made simple: quick turnaround, premium accuracy, and complete confidentiality.
           </p>
 
           <button

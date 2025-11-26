@@ -24,15 +24,11 @@ const AdditionalSupportHero = () => {
           <p className="ts-hero__eyebrow">Additional Support</p>
 
           <h1 className="ts-hero__title">
-            Lorem Ipsum Content is the
-            <br /> Dummy text
+           Reliable Language Support Beyond Transcription
           </h1>
 
           <p className="ts-hero__description">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed.
+            Get comprehensive assistance tailored to your content needs quality checks, formatting support, linguistic enhancements, and specialized documentation to ensure every file you deliver is polished, accurate, and ready for use.
           </p>
 
           <div className="ts-hero__cards">

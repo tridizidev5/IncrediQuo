@@ -32,9 +32,9 @@ const AdditionalSupportUserCentric = () => {
   return (
     <section className="as-usercentric">
       <div className="as-usercentric__inner">
-        <h2 className="as-usercentric__title">Make every step user-centric</h2>
+        <h2 className="as-usercentric__title">Our Additional Support Services</h2>
         <p className="as-usercentric__subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipis elit
+          Smart, reliable, and high-quality solutions for every need
         </p>
 
         <div className="as-usercentric__grid">
@@ -44,8 +44,7 @@ const AdditionalSupportUserCentric = () => {
             </div>
             <h3>Timecoding &amp; Speaker Labels</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-              proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+              Accurate timestamps and clear speaker identification to keep your transcripts organized and easy to navigate.
             </p>
           </article>
 
@@ -55,8 +54,7 @@ const AdditionalSupportUserCentric = () => {
             </div>
             <h3>Exhibit Marking &amp; Indexing</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-              proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+              Systematic labeling and indexing of exhibits for seamless reference in legal, corporate, or research-based workflows.
             </p>
           </article>
 
@@ -66,8 +64,7 @@ const AdditionalSupportUserCentric = () => {
             </div>
             <h3>Quality Review &amp; Proofing</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-              proin faucibus nibh et sagittis a. Lacinia purus ac amet.
+              Thorough proofreading and multi-level checks to ensure your files are polished, precise, and error-free.
             </p>
           </article>
         </div>

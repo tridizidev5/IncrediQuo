@@ -22,16 +22,11 @@ const SummarizationHero = () => {
           <p className="ts-hero__eyebrow">Summarization</p>
 
           <h1 className="ts-hero__title">
-            Lorem Ipsum Content is the
-            <br />
-            Dummy text
+            Precision Summaries That Save Time & Deliver Clarity
           </h1>
 
           <p className="ts-hero__description">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The
-            point of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed.
+            Our Summarisation Service transforms lengthy, complex content into clear, concise, and insightful summaries, without losing meaning, context, or critical details. We help you extract the essential information you need for faster decision-making, smoother workflows, and smarter content consumption across every industry.
           </p>
 
           <div className="ts-hero__cards">

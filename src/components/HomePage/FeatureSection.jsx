@@ -14,20 +14,19 @@ const FeatureSection = () => {
         {/* Right content */}
         <div className="feature-content">
           <h2 className="feature-title">
-            Lorem Ipsum is the <br />
-            Dummy test
+            Our Workflow Engineered  <br />
+            for Accuracy & Speed
           </h2>
 
           <p className="feature-text">
-            You can explore the features that we provide with fun and have
-            their own functions each feature.
+            A streamlined, quality-first process that ensures every transcription, caption, and summary is delivered with precision, on time, every time.
           </p>
 
           <ul className="feature-list">
-            <li className="feature-item">Powerful online protection.</li>
-            <li className="feature-item">Internet without borders.</li>
-            <li className="feature-item">Supercharged NetONE</li>
-            <li className="feature-item">No specific time limits.</li>
+            <li className="feature-item">Clear requirement gathering and project scoping</li>
+            <li className="feature-item">Tasks assigned to the right domain experts.</li>
+            <li className="feature-item">Human-led processing with smart tech support</li>
+            <li className="feature-item">Fast delivery across all working modes.</li>
           </ul>
         </div>
       </div>

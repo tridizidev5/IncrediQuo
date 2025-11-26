@@ -1,0 +1,64 @@
+/* ===========================
+   TERMS HERO
+   =========================== */
+
+.terms-hero {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(90deg, #002147 0%, #ffe9ec 100%);
+  padding: 158px 16px 140px; /* matches figma ~447 height */
+  overflow: hidden;
+}
+
+/* center content in 1440px area */
+.terms-hero__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terms-hero__title {
+  font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* white curved break (section-break frame) */
+.terms-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 206px; /* ≈ figma */
+  background: #ffffff;
+  border-radius: 70% 70% 0 0 / 100% 100% 0 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .terms-hero {
+    padding: 120px 16px 96px;
+  }
+
+  .terms-hero__title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .terms-hero {
+    padding: 100px 16px 72px;
+  }
+
+  .terms-hero__title {
+    font-size: 32px;
+  }
+}

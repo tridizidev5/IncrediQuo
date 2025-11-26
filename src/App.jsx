@@ -27,6 +27,9 @@ import AdditionalSupportServicePage from "./components/AdditionalSupportService/
 // careers page
 import Careers from "./components/Career/Careers";
 
+// terms page
+import TermsPage from "./components/Terms/TermsPage";
+
 import "./appStyles/AppLayout.css";
 
 function App() {
@@ -83,8 +86,7 @@ function App() {
             element={
               <>
                 <Careers />
-                {/* optional CTA under careers page, remove if you don't want */}
-                
+                {/* add <CTA /> here if you want CTA under Careers */}
               </>
             }
           />
@@ -131,6 +133,17 @@ function App() {
             element={
               <>
                 <AdditionalSupportServicePage />
+                <CTA />
+              </>
+            }
+          />
+
+          {/* TERMS & CONDITIONS PAGE */}
+          <Route
+            path="/terms-of-service"
+            element={
+              <>
+                <TermsPage />
                 <CTA />
               </>
             }

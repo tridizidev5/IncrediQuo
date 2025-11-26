@@ -3,10 +3,12 @@
   background: radial-gradient(circle at 50% 140%, #fff3f7 0, transparent 60%);
 }
 
+/* ✅ SHIFT ENTIRE CONTENT LEFT */
 .as-usercentric__inner {
   max-width: 960px;
   margin: 0 auto;
   text-align: center;
+  transform: translateX(-20px); /* CONTROL LEFT SHIFT HERE */
 }
 
 .as-usercentric__title {
@@ -36,7 +38,7 @@
   position: relative;
 }
 
-/* vertical separators between 1st and 2nd items */
+/* vertical separators between items */
 .as-usercentric__item:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -64,20 +66,25 @@
 
 /* TEXT */
 .as-usercentric__item h3 {
-  font-size: 15px;
+  font-size: 21px;
   font-weight: 700;
   color: #111827;
   margin-bottom: 10px;
 }
 
 .as-usercentric__item p {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.7;
   color: #6b7280;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 1024px) {
+  .as-usercentric__inner {
+    transform: none; /* remove shift on mobile */
+  }
+
   .as-usercentric__grid {
     grid-template-columns: 1fr;
     gap: 28px;
