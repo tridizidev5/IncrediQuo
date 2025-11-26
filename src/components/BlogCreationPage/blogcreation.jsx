@@ -56,66 +56,55 @@ export const CreateBlog = () => {
       reader.readAsDataURL(file);
     }
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (isSubmitting) return;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (isSubmitting) return;
-    setIsSubmitting(true);
+  setIsSubmitting(true);
 
-    if (!image) {
-      alert("Please select an image.");
-      setIsSubmitting(false);
-      return;
-    }
+  if (!image) {
+    toast.error("Please upload an image");
+    setIsSubmitting(false);
+    return;
+  }
 
-    try {
-      const imageRef = storageRef(storage, `blogs/${Date.now()}-${image.name}`);
-      const uploadTask = await uploadBytes(imageRef, image);
-      const imageUrl = await getDownloadURL(uploadTask.ref);
+  try {
+const imageRef = ref(storage, `blogs/${Date.now()}-${image.name}`);
+const uploaded = await uploadBytes(imageRef, image);
+const imageUrl = await getDownloadURL(uploaded.ref);
 
-      const newBlogRef = push(ref(database, "blogs"));
-      await set(newBlogRef, {
-        title,
-        content,
-        DepartmentOfblog,
-        image_url: imageUrl,
-        blog_content: blogContent,
-        author_name: authorName,
-        created_at: new Date().toISOString(),
-      });
+    
+    await set(newBlogRef, {
+      title,
+      content,
+      DepartmentOfblog,
+      image_url: imageUrl,
+      blog_content: blogContent,
+      author_name: authorName,
+      created_at: new Date().toISOString(),
+    });
 
-      toast.success("Blog created successfully!", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
-      setTitle("");
-      setContent("");
-      setImage(null);
-      setPreview(null);
-      setAuthorName("");
-      setDepartmentOfblog("");
-      setEditorState(EditorState.createEmpty());
-      setTimeout(() => {
-        navigate("/manageblogs");
-      }, 2000);
-    } catch (err) {
-      console.error("Error during submission:", err);
-      toast.error("An error occurred while saving the Blog.", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    toast.success("Blog created successfully!");
+
+    // Reset UI
+    setTitle("");
+    setContent("");
+    setImage(null);
+    setPreview(null);
+    setAuthorName("");
+    setDepartmentOfblog("");
+    setEditorState(EditorState.createEmpty());
+
+    setTimeout(() => navigate("/manageblogs"), 1000);
+
+  } catch (err) {
+    console.error("Upload error:", err);
+    toast.error("Failed to upload. Check Firebase storage rules or config.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
   const navigate = useNavigate();
 
   return (
