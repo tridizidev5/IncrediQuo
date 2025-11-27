@@ -4,11 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #050038;
+  background-color: #022447;
   padding: 20px;
 }
 .dashboard-container {
-  background-color: #0e0b46;
+  background-color: #0b132a;
   padding: 40px 30px;
   border-radius: 20px;
   width: 100%;
@@ -41,7 +41,7 @@
 }
 
 .dashboard-btn {
-  background-color: #fdbdb3;
+  background-color: #ffe8f0;
   color: #050038;
 }
 
