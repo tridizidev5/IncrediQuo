@@ -1,6 +1,7 @@
 // BannerStats.jsx
 import React from "react";
 import "../../appStyles/HomePageStyles/BannerStats.css";
+import { Button } from "../Button/Button";
 
 const BannerStats = ({ onOpenContact }) => {
   const handleClick = () => {
@@ -12,7 +13,6 @@ const BannerStats = ({ onOpenContact }) => {
   return (
     <section className="banner">
       <div className="banner__inner">
-
         {/* LEFT SIDE PILL STRIPES */}
         <div className="banner__stripes">
           <div className="banner__stripe"></div>
@@ -27,7 +27,7 @@ const BannerStats = ({ onOpenContact }) => {
 
         <div className="banner__text">
           <h2>
-            Flexible Work Modes Designed for Your 
+            Flexible Work Modes Designed for Your
             <br />
             Every Deadline
           </h2>
@@ -37,9 +37,23 @@ const BannerStats = ({ onOpenContact }) => {
             delivery, our flexible service modes ensure your transcription and
             language solutions arrive exactly when you need them.
           </p>
-          <button className="banner__button" onClick={handleClick}>
+          {/* <button className="banner__button" onClick={handleClick}>
             Get Started
-          </button>
+          </button> */}
+          <div onClick={handleClick}>
+            <Button
+              name="Get Started"
+              paddingXL="8.6vw"
+              paddingXM="24.5vw"
+              widthL="10.7vw"
+              widthM="30.3vw"
+              bacgrounClr="#ffff"
+              bacgrounArrow="#022447"
+              colorArrow="#ffff"
+              colorText="#022447"
+              colorTextHover="#ffff"
+            />
+          </div>
         </div>
 
         <div className="banner__ticker">

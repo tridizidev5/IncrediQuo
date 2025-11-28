@@ -2,6 +2,7 @@
 import React from "react";
 import "../../appStyles/HomePageStyles/Hero.css";
 import heroIllustration from "../../assets/hero/hero-illustration.png";
+import { Button } from "../Button/Button";
 
 const Hero = ({ onOpenContact }) => {
   const handleGetStarted = () => {
@@ -18,9 +19,12 @@ const Hero = ({ onOpenContact }) => {
           <p className="hero__subtitle">
             IncrediQuo Solutions offers professional transcription services with exceptional accuracy. Whether it's corporate meetings, academic lectures, market research, podcasts, or legal discussions, we deliver high-quality transcripts that are precise, secure, and fast.
           </p>
-          <button className="hero__button" onClick={handleGetStarted}>
+          {/* <button className="hero__button" onClick={handleGetStarted}>
             Get Started
-          </button>
+          </button> */}
+            <div onClick={handleGetStarted}>
+                                <Button name="Get Started" />
+                              </div>
         </div>
 
         <div className="hero__image">
