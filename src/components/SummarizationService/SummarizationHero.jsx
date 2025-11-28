@@ -1,8 +1,6 @@
 import React from "react";
 import heroIllustration from "../../assets/services/SummarizationHero.png";
-import "../../appStyles/Services/TranscriptionHero.css"; 
-import visionCard from "../../assets/icons/Group 5.png";
-import goalCard from "../../assets/icons/Group 9.png";
+import "../../appStyles/Services/TranscriptionHero.css";
 
 import BulbIcon from "../../assets/services/serviceIcon.png";
 import BulbIcon2 from "../../assets/services/serviceIcon1.png";

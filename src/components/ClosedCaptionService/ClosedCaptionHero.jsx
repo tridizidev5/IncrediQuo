@@ -1,8 +1,6 @@
 import React from "react";
-import heroIllustration from "../../assets/services/ClosedCaptionServicePage.png";  // ⬅ correct image
+import heroIllustration from "../../assets/services/ClosedCaptionServicePage.png";
 import "../../appStyles/Services/TranscriptionHero.css";
-import visionCard from "../../assets/icons/Group 5.png";
-import goalCard from "../../assets/icons/Group 9.png";
 
 import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/serviceIcon1.png";
@@ -17,6 +15,7 @@ const ClosedCaptionHero = ({ onOpenContact }) => {
   return (
     <section className="ts-hero">
       <div className="ts-hero__inner">
+
         {/* LEFT — illustration */}
         <div className="ts-hero__left">
           <img
@@ -33,14 +32,14 @@ const ClosedCaptionHero = ({ onOpenContact }) => {
           <h1 className="ts-hero__title">
             Precision Captioning & Subtitles for a Truly Inclusive Audience
           </h1>
+
           <p className="ts-hero__description">
             Make your videos accessible, accurate, and globally ready with our
             expertly crafted captions and multilingual subtitles. We ensure
-            clarity, timing precision, and compliance. so every viewer
+            clarity, timing precision, and compliance so every viewer
             understands your story.
           </p>
 
-          {/* Vision and Goal card images */}
           <div className="vg-container">
             <div className="vg-card">
               <div className="innerIMg_bulb">
@@ -51,6 +50,7 @@ const ClosedCaptionHero = ({ onOpenContact }) => {
                 <p>Making every word clear, accurate, and dependable</p>
               </div>
             </div>
+
             <div className="vg-card">
               <div className="innerIMg_bulb">
                 <img src={BulbIcon2} alt="Goal" className="vg-icon" />
