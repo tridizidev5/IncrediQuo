@@ -1,4 +1,3 @@
-// src/components/Privacy/PrivacyContent.jsx
 import React from "react";
 import "../../appStyles/TermsPageStyles/TermsContent.css";
 
@@ -122,14 +121,21 @@ const PrivacyContent = () => {
           be posted on this page with the updated date.
         </p>
 
-        <h2>Contact Information</h2>
-        <p>For privacy or data-related queries, contact us at:</p>
-        <p>
-          <strong>Email:</strong> info@incrediquosolutions.com
-          <br />
-          <br />
-          <strong>Location:</strong> Hyderabad, India
-        </p>
+        {/* FINAL CONTACT BLOCK */}
+        <h3>Contact Information</h3>
+
+        <div className="terms-contact">
+          <p>For privacy or data-related queries, contact us at:</p>
+
+          <p>
+            <strong>Email:</strong> info@incrediquosolutions.com
+          </p>
+
+          <p>
+            <strong>Location:</strong> Hyderabad, India
+          </p>
+        </div>
+
       </div>
     </section>
   );

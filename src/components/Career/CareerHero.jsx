@@ -48,34 +48,8 @@ const CareerHero = () => {
             <div className="search-field__value">
               <span className="search-value">Select Your City</span>
 
-              {/* Location pin – 12 x 14.67, 1.4px, #8F90A6 */}
-              <span
-                className="search-icon search-icon--pin"
-                aria-hidden="true"
-              >
-                <svg
-                  width="12"
-                  height="14.67"
-                  viewBox="0 0 12 15"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6 14.5C6 14.5 1.5 9.9 1.5 6.5C1.5 4.29 3.29 2.5 5.5 2.5C7.71 2.5 9.5 4.29 9.5 6.5C9.5 9.9 6 14.5 6 14.5Z"
-                    fill="none"
-                    stroke="#8F90A6"
-                    strokeWidth="1.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <circle
-                    cx="5.5"
-                    cy="6"
-                    r="1.5"
-                    fill="none"
-                    stroke="#8F90A6"
-                    strokeWidth="1.4"
-                  />
-                </svg>
+              <span className="search-icon search-icon--pin" aria-hidden="true">
+                <img src="/Group 3.png" alt="" />
               </span>
             </div>
           </div>
@@ -87,58 +61,20 @@ const CareerHero = () => {
             <div className="search-field__value">
               <span className="search-value">Choose job role</span>
 
-              {/* Chevron – 12 x 6, 1.5px, #8F90A6 */}
               <span
                 className="search-icon search-icon--chevron"
                 aria-hidden="true"
               >
-                <svg
-                  width="12"
-                  height="6"
-                  viewBox="0 0 12 6"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 1L6 5L11 1"
-                    fill="none"
-                    stroke="#8F90A6"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <img src="/Group 4.png" alt="" />
               </span>
             </div>
           </div>
 
-          {/* SEARCH BUTTON – 159 x 54 */}
+          {/* SEARCH BUTTON */}
           <button className="ch-btn ch-btn--search" type="button">
             <span className="ch-btn__label">SEARCH</span>
             <span className="ch-btn__icon" aria-hidden="true">
-              <svg
-                width="17.76"
-                height="17.76"
-                viewBox="0 0 18 18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="8"
-                  cy="8"
-                  r="4.5"
-                  stroke="#FFFFFF"
-                  strokeWidth="3"
-                  fill="none"
-                />
-                <line
-                  x1="12"
-                  y1="12"
-                  x2="17"
-                  y2="17"
-                  stroke="#FFFFFF"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <img src="/search button.png" alt="" />
             </span>
           </button>
         </div>

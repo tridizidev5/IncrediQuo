@@ -164,7 +164,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 4px;          /* spacing between text & icon */
+  gap: 22px;          /* spacing between text & icon */
 }
 
 .search-value {
@@ -185,23 +185,23 @@
   margin-left: 0;
 }
 
-/* Location pin — 12 x 14.67, stroke 1.4 */
-.search-icon--pin svg {
+.search-icon img {
+  display: block;
+}
+
+/* Location pin — 12 x 14.67 */
+.search-icon--pin img {
   width: 12px;
   height: 14.67px;
-  stroke-width: 1.4px;
-  stroke: #8F90A6;
-  display: block;
+  object-fit: contain;
   transform: translateY(1px);   /* baseline alignment */
 }
 
-/* Chevron — 12 x 6, stroke 1.5 */
-.search-icon--chevron svg {
+/* Chevron — 12 x 6 */
+.search-icon--chevron img {
   width: 12px;
   height: 6px;
-  stroke-width: 1.5px;
-  stroke: #8F90A6;
-  display: block;
+  object-fit: contain;
   transform: translateY(1px);
 }
 
@@ -228,18 +228,18 @@
   cursor: pointer;
 }
 
-/* Search icon in button — 17.76 x 17.76, stroke 3 */
+/* Search icon in button — 17.76 x 17.76 */
 .ch-btn__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transform: translateY(1px);
 }
-.ch-btn__icon svg {
+
+.ch-btn__icon img {
   width: 17.76px;
   height: 17.76px;
-  stroke-width: 3px;
-  stroke: #FFFFFF;
+  object-fit: contain;
   display: block;
 }
 
