@@ -1,10 +1,10 @@
 import React from "react";
 import heroIllustration from "../../assets/services/Additionalsupport.png"; // <-- correct image
 import "../../appStyles/Services/TranscriptionHero.css";
-import visionCard from "../../assets/icons/Group 5.png";
-import goalCard from "../../assets/icons/Group 9.png";
+
 import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/serviceIcon1.png";
+
 const AdditionalSupportHero = ({ onOpenContact }) => {
   const handleGetStarted = () => {
     if (typeof onOpenContact === "function") {
@@ -15,7 +15,6 @@ const AdditionalSupportHero = ({ onOpenContact }) => {
   return (
     <section className="ts-hero">
       <div className="ts-hero__inner">
-        
         {/* LEFT IMAGE */}
         <div className="ts-hero__left">
           <img
@@ -34,7 +33,7 @@ const AdditionalSupportHero = ({ onOpenContact }) => {
           </h1>
 
           <p className="ts-hero__description">
-            Get comprehensive assistance tailored to your content needs quality
+            Get comprehensive assistance tailored to your content needs—quality
             checks, formatting support, linguistic enhancements, and specialized
             documentation to ensure every file you deliver is polished,
             accurate, and ready for use.
@@ -50,6 +49,7 @@ const AdditionalSupportHero = ({ onOpenContact }) => {
                 <p>Making every word clear, accurate, and dependable</p>
               </div>
             </div>
+
             <div className="vg-card">
               <div className="innerIMg_bulb">
                 <img src={BulbIcon2} alt="Goal" className="vg-icon" />

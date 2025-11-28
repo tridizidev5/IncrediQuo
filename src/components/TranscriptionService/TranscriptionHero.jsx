@@ -2,9 +2,7 @@ import React from "react";
 import heroIllustration from "../../assets/transcription/Mask group.png";
 import "../../appStyles/Services/TranscriptionHero.css";
 
-// import PNG card images correctly
-import visionCard from "../../assets/icons/Group 5.png";
-import goalCard from "../../assets/icons/Group 9.png";
+// Icons used in cards
 import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/serviceIcon1.png";
 
@@ -18,6 +16,7 @@ const TranscriptionHero = ({ onOpenContact }) => {
   return (
     <section className="ts-hero">
       <div className="ts-hero__inner">
+
         {/* LEFT — Illustration */}
         <div className="ts-hero__left">
           <img
@@ -43,7 +42,7 @@ const TranscriptionHero = ({ onOpenContact }) => {
             business needs. Fast, reliable, and powered by expert professionals.
           </p>
 
-          {/* CARDS — only images */}
+          {/* CARDS */}
           <div className="vg-container">
             <div className="vg-card">
               <div className="innerIMg_bulb">
@@ -54,6 +53,7 @@ const TranscriptionHero = ({ onOpenContact }) => {
                 <p>Making every word clear, accurate, and dependable</p>
               </div>
             </div>
+
             <div className="vg-card">
               <div className="innerIMg_bulb">
                 <img src={BulbIcon2} alt="Goal" className="vg-icon" />
