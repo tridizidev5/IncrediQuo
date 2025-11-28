@@ -43,7 +43,9 @@ const TaglineScroller = () => {
           <div className={`tagline-track ${activeAnimations[index] ? "animate" : ""}`}>
             <span className={item.className}>{item.text}</span>
             {/* Duplicate for smooth infinite scrolling */}
-            {/* <span className={item.className}>{item.text}</span> */}
+            <span className={item.className}>{item.text}</span>
+                        <span className={item.className}>{item.text}</span>
+
           </div>
         </div>
       ))}
