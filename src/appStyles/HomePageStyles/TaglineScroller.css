@@ -140,9 +140,9 @@
 /* ---------- SMALL MOBILE (≤ 480px) ---------- */
 @media (max-width: 480px) {
   .tagline-section {
-    padding: 12px 0;
+    /* padding: 12px 0; */
     gap: 10px;
-    margin-top: -8px;
+    margin-top: -200px;
   }
 
   .tagline-row {
