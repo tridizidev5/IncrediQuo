@@ -1,11 +1,10 @@
-// src/components/Privacy/PrivacyContent.jsx
 import React from "react";
-import "../../appStyles/TermsPageStyles/TermsContent.css";
+import "../../appStyles/PrivacyPageStyles/PrivacyContent.css";
 
 const PrivacyContent = () => {
   return (
-    <section className="terms-content">
-      <div className="terms-content__inner">
+    <section className="privacy-content">
+      <div className="privacy-content__inner">
         <p>
           Your privacy is important to us. This policy explains how we collect,
           use, store, and safeguard your information.
@@ -34,7 +33,7 @@ const PrivacyContent = () => {
         <h3>c. Technical Data</h3>
         <ul>
           <li>IP address</li>
-          <li>Device / browser details</li>
+          <li>Device/browser details</li>
           <li>Usage analytics through cookies</li>
         </ul>
 
@@ -82,8 +81,8 @@ const PrivacyContent = () => {
         <p>Files are stored only for the duration required to deliver services.</p>
         <p>
           Standard retention period: 30–90 days (custom agreements available).
-          Upon request, files can be deleted immediately after delivery.
         </p>
+        <p>Upon request, files can be deleted immediately after delivery.</p>
 
         <h2>Sharing of Information</h2>
         <p>We may share limited information with:</p>
@@ -112,8 +111,10 @@ const PrivacyContent = () => {
 
         <h2>External Links</h2>
         <p>
-          Our website may contain links to third-party websites. We are not
-          responsible for their privacy practices or content.
+          Our website may contain links to third-party websites.
+        </p>
+        <p>
+          We are not responsible for their privacy practices or content.
         </p>
 
         <h2>Changes to This Policy</h2>
@@ -122,14 +123,18 @@ const PrivacyContent = () => {
           be posted on this page with the updated date.
         </p>
 
-        <h2>Contact Information</h2>
-        <p>For privacy or data-related queries, contact us at:</p>
-        <p>
-          <strong>Email:</strong> info@incrediquosolutions.com
-          <br />
-          <br />
-          <strong>Location:</strong> Hyderabad, India
-        </p>
+        <h3>Contact Information</h3>
+
+        <div className="privacy-contact">
+          <p>For privacy or data-related queries, contact us at:</p>
+
+          <p>
+            <strong>Email:</strong> info@incrediquosolutions.com
+          </p>
+          <p>
+            <strong>Location:</strong> Hyderabad, India
+          </p>
+        </div>
       </div>
     </section>
   );
