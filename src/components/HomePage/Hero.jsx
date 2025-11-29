@@ -64,26 +64,8 @@ const Hero = ({ onOpenContact }) => {
             lectures, market research, podcasts, or legal discussions, we
             deliver high-quality transcripts that are precise, secure, and fast.
           </p>
-<<<<<<< HEAD
           <div onClick={handleGetStarted}>
             <Button name="Get Started" />
-=======
-
-          <div onClick={handleGetStarted}>
-            {/* <Button name="Get Started" /> */}
-                        <Button
-              name="Get Started"
-              paddingXL="8.6vw"
-              paddingXM="24.5vw" // ← mobile padding
-              widthL="10.85vw" // ← THIS IS KEY: let content decide width
-              widthM="30.3vw" // ← auto width on mobile too
-              bacgrounClr="#022447"
-              bacgrounArrow="#ffffff"
-              colorArrow="#022447"
-              colorText="#ffffff"
-              colorTextHover="#022447"
-            />
->>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf
           </div>
         </div>
 
