@@ -62,23 +62,23 @@ export const CreateBlog = () => {
     if (isSubmitting) return;
     setIsSubmitting(true);
 
-    // if (!image) {
-    //   alert("Please select an image.");
-    //   setIsSubmitting(false);
-    //   return;
-    // }
+    if (!image) {
+      alert("Please select an image.");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
-      // const imageRef = storageRef(storage, blogs/${Date.now()}-${image.name});
-      // const uploadTask = await uploadBytes(imageRef, image);
-      // const imageUrl = await getDownloadURL(uploadTask.ref);
+      const imageRef = storageRef(storage, `blogs/${Date.now()}-${image.name}`);
+      const uploadTask = await uploadBytes(imageRef, image);
+      const imageUrl = await getDownloadURL(uploadTask.ref);
 
       const newBlogRef = push(ref(database, "blogs"));
       await set(newBlogRef, {
         title,
         // content,
         DepartmentOfblog,
-        // image_url: imageUrl,
+        image_url: imageUrl,
         blog_content: blogContent,
         author_name: authorName,
         created_at: new Date().toISOString(),
@@ -204,26 +204,29 @@ export const CreateBlog = () => {
               }}
             />
             <span className="red_alter">Only images upto 5MB are allowed.</span>
+            <span className="red_alter2">Note: Image size should be 1280 px X 640 px</span>
 
             {preview && (
               <img src={preview} alt="Preview" className="preview-img" />
             )}
 
-<Button
-  name={isSubmitting ? "Publishing..." : "Publish Blog"}
-  type="submit"
-  disabled={isSubmitting}
-  paddingXL="8.6vw"
-  paddingXM="24.5vw"
-  widthL="10.7vw"
-  widthM="30.3vw"
-  bacgrounClr="#022447"
-  bacgrounArrow="#ffff"
-  colorArrow="#022447"
-  colorText="#ffff"
-  colorTextHover="#022447"
-/>
-
+            {/* <Button
+              name={isSubmitting ? "Publishing..." : "Publish Blog"}
+              type="submit"
+              disabled={isSubmitting}
+              paddingXL="8.6vw"
+              paddingXM="20.5vw"
+              widthL="10.7vw"
+              widthM="30.3vw"
+              bacgrounClr="#022447"
+              bacgrounArrow="#ffff"
+              colorArrow="#022447"
+              colorText="#ffff"
+              colorTextHover="#022447"
+            /> */}
+             <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Publishing..." : "Publish Blog"}
+            </button>
           </form>
         </div>
       </div>

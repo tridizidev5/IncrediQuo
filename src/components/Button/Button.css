@@ -10,7 +10,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.1vw 2vw 0.1vw 1vw;
+    /* padding: 0.1vw 2vw 0.1vw 1vw; */
+    padding: 0.3vw 1.78vw 0.3vw 1vw;
     border-radius: 5vw;
     background-color: var(--bacgrounClr);
     position: relative;
@@ -61,7 +62,7 @@
 @media screen and (min-width: 320px) and (max-width: 720px) {
 
     .About_bbcontainer {
-        padding: .8vw 4.5vw .8vw 4vw;
+        padding: 1.3vw 3.97vw;
     }
 
     .About_contact_btn {

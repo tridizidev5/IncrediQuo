@@ -2,6 +2,7 @@
 import React from "react";
 import "../../appStyles/HomePageStyles/Hero.css";
 import heroIllustration from "../../assets/hero/hero-illustration.png";
+import heroWave from "../../assets/hero/Frame 2301.png"; // <-- waveform image
 import { Button } from "../Button/Button";
 
 const LINE1_TEXT = "Transcriptions That "; // 20 characters
@@ -15,7 +16,7 @@ const TYPING_TIME_LINE2 = LINE2_TEXT.length * TYPING_TIME_PER_CHAR; // 1.52s
 const Hero = ({ onOpenContact }) => {
   const handleGetStarted = () => {
     if (typeof onOpenContact === "function") {
-      onOpenContact(); // this will show the ContactSection popup
+      onOpenContact();
     }
   };
 
@@ -58,15 +59,48 @@ const Hero = ({ onOpenContact }) => {
             </span>
           </h1>
           <p className="hero__subtitle">
-            IncrediQuo Solutions offers professional transcription services with exceptional accuracy. Whether it's corporate meetings, academic lectures, market research, podcasts, or legal discussions, we deliver high-quality transcripts that are precise, secure, and fast.
+            IncrediQuo Solutions offers professional transcription services with
+            exceptional accuracy. Whether it's corporate meetings, academic
+            lectures, market research, podcasts, or legal discussions, we
+            deliver high-quality transcripts that are precise, secure, and fast.
           </p>
+<<<<<<< HEAD
           <div onClick={handleGetStarted}>
             <Button name="Get Started" />
+=======
+
+          <div onClick={handleGetStarted}>
+            {/* <Button name="Get Started" /> */}
+                        <Button
+              name="Get Started"
+              paddingXL="8.6vw"
+              paddingXM="24.5vw" // ← mobile padding
+              widthL="10.85vw" // ← THIS IS KEY: let content decide width
+              widthM="30.3vw" // ← auto width on mobile too
+              bacgrounClr="#022447"
+              bacgrounArrow="#ffffff"
+              colorArrow="#022447"
+              colorText="#ffffff"
+              colorTextHover="#022447"
+            />
+>>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf
           </div>
         </div>
 
         <div className="hero__image">
-          <img src={heroIllustration} alt="Hero Illustration" />
+          {/* main illustration */}
+          <img
+            src={heroIllustration}
+            alt="Hero Illustration"
+            className="hero__image-main"
+          />
+
+          {/* waveform overlay (108 x 82 in Figma) */}
+          <img
+            src={heroWave}
+            alt="Audio waveform"
+            className="hero__wave"
+          />
         </div>
       </div>
     </section>

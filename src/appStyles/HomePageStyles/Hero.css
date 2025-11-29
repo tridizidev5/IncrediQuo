@@ -149,7 +149,7 @@
     max-width: 440px;
   }
 
-  .hero__image img {
+  .hero__image-main {
     max-width: 440px;
   }
 
@@ -176,6 +176,12 @@
 
   .hero__subtitle {
     font-size: 15px;
+  }
+
+  .hero__wave {
+    width: 22%;
+    top: 50%;
+    left: 52%;
   }
 }
 
@@ -204,8 +210,14 @@
     max-width: 260px;
   }
 
-  .hero__image img {
+  .hero__image-main {
     max-width: 360px;
+  }
+
+  .hero__wave {
+    width: 26%;
+    top: 50%;
+    left: 52%;
   }
 }
 

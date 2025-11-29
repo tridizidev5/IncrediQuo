@@ -118,8 +118,20 @@ const BlogPage = () => {
                 Submit
               </button> */}
 
-                <div>
-            <Button name="Submit form" className="blog-contact__submit"/>
+                <div className="blog-contact__submit">
+            {/* <Button name="Submit form" /> */}
+              <Button
+              name="Submit form"
+              paddingXL="8.6vw"
+              paddingXM="24.5vw" // ← mobile padding
+              widthL="11.24vw" // ← THIS IS KEY: let content decide width
+              widthM="30.3vw" // ← auto width on mobile too
+              bacgrounClr="#022447"
+              bacgrounArrow="#ffffff"
+              colorArrow="#022447"
+              colorText="#ffffff"
+              colorTextHover="#022447"
+            />
           </div>
             </form>
           </div>
@@ -150,7 +162,19 @@ const BlogPage = () => {
                             onClick={() => navigate("/about")}
                             style={{ cursor: "pointer" }}
                           >
-                            <Button name="ABOUT US" />
+                            {/* <Button name="ABOUT US" /> */}
+                                                                                 <Button
+                                                            name="ABOUT US"
+                                                            paddingXL="8.6vw"
+                                                            paddingXM="24.5vw" // ← mobile padding
+                                                            widthL="10.85vw" // ← THIS IS KEY: let content decide width
+                                                            widthM="30.3vw" // ← auto width on mobile too
+                                                            bacgrounClr="#022447"
+                                                            bacgrounArrow="#ffffff"
+                                                            colorArrow="#022447"
+                                                            colorText="#ffffff"
+                                                            colorTextHover="#022447"
+                                                          />
                           </div>
         </div>
       </section>

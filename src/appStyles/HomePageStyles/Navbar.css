@@ -10,17 +10,15 @@
   justify-content: space-between;
   padding: 20px 70px;
   background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* subtle shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   animation: navbarFadeDown 0.6s ease-out;
   box-sizing: border-box;
 }
 
-/* sections that you scroll to with anchors */
 .page-section {
   scroll-margin-top: 90px; 
 }
 
-/* small fade-down on first paint */
 @keyframes navbarFadeDown {
   from {
     opacity: 0;
@@ -43,16 +41,22 @@
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
   text-decoration: none;
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 10px;
 }
+
 
 .navbar__logo img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   transition: transform 0.25s ease;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 50%;
 }
 
-/* logo hover: tiny scale for feedback */
 .navbar__logo:hover {
   transform: translateY(-1px);
 }
@@ -61,7 +65,7 @@
   transform: scale(1.05);
 }
 
-/* ===== CENTER — nav links ===== */
+/* ===== CENTER — nav links (UPDATED WITH ACTIVE STATE) ===== */
 .navbar__links {
   display: flex;
   align-items: center;
@@ -77,24 +81,21 @@
   transition: color 0.25s ease;
 }
 
-/* hover color + underline */
+
 .navbar__links a:hover {
   color: #ff6a7a;
 }
 
-.navbar__links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  border-radius: 999px;
-  background: #ff6a7a;
-  transition: width 0.25s ease;
+.navbar__links a:hover::after {
+  width: 100%;
 }
 
-.navbar__links a:hover::after {
+/* ACTIVE STATE for regular links */
+.navbar__links a.active {
+  color: #ff6a7a;
+}
+
+.navbar__links a.active::after {
   width: 100%;
 }
 
@@ -214,12 +215,14 @@
 }
 
 .dropdown.open .dropdown__title,
-.dropdown__title:hover {
+.dropdown__title:hover,
+.dropdown__title.active {
   color: #ff6a7a;
 }
 
 .dropdown.open .dropdown__title::after,
-.dropdown__title:hover::after {
+.dropdown__title:hover::after,
+.dropdown__title.active::after {
   width: 100%;
 }
 
@@ -230,25 +233,21 @@
   left: 50%;
   transform: translateX(-50%);
   margin-top: 6px;
-
   width: 404px;
   height: 326px;
   background: #002147;
   border-radius: 34px;
-
   padding: 37px 25px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   box-sizing: border-box;
-
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.25s ease, visibility 0.25s ease;
   box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
   z-index: 1200;
-
   overflow-y: hidden;
   scrollbar-width: none;
 }
@@ -265,10 +264,8 @@
   font-size: 21px;
   font-weight: 500;
   line-height: 36px;
-
   text-decoration: none;
   color: #ffffff;
-
   padding: 4px 6px;
   border-radius: 12px;
   transition: background 0.25s ease, color 0.25s ease;
@@ -291,10 +288,112 @@
   color: #002147;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===========================
+    ABOUT / COMPANY HISTORY
+    =========================== */
+
+.history {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.history__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.history__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history__content h2 {
+  max-width: 694px;
+  width: 100%;
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 52px;
+  line-height: 62px;
+  font-weight: 700;
+  color: #002147;
+  text-align: center;
+  margin: 0 0 65px;
+}
+
+.history__para {
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 41px;
+  font-weight: 400;
+  color: #4b5563;
+  margin: 0 auto;
+}
+
+/* PARAGRAPH SPECIFIC STYLES (MATCHING CENTER ALIGNMENT) */
+
+/* 1) FIRST PARAGRAPH */
+.history__para:nth-of-type(1) {
+  max-width: 1186px;
+  text-align: center;
+  margin: 32px auto 32px;
+}
+
+/* 2) SECOND PARAGRAPH */
+.history__para:nth-of-type(2) {
+  max-width: 1186px;
+  text-align: center;
+  margin: 32px auto 32px;
+}
+
+/* 3) THIRD PARAGRAPH */
+.history__para:nth-of-type(3) {
+  max-width: 1186px;
+  text-align: center;
+  margin: 32px auto 0;
+}
+
+/* ================== RESPONSIVE ================== */
 
 /* Tablets / small laptops (<= 1024px) */
 @media (max-width: 1024px) {
+  .history {
+    padding: 96px 0 96px;
+  }
+
+  .history__inner {
+    padding: 0 20px;
+  }
+
+  .history__content h2 {
+    max-width: 100%;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 24px;
+  }
+
+  .history__para {
+    max-width: 100%;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: left;
+  }
+  
+  /* Responsive margin adjustments for paragraphs */
+  .history__para:nth-of-type(1),
+  .history__para:nth-of-type(2) {
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+  
+  .history__para:nth-of-type(3) {
+    margin-top: 28px;
+    margin-bottom: 0;
+  }
+
+  /* --- NAVBAR RESPONSIVE --- */
   .navbar {
     padding: 16px 32px;
   }
@@ -330,6 +429,21 @@
 
 /* Small tablets & phones (<= 768px) */
 @media (max-width: 768px) {
+  .history__inner {
+    padding: 0 16px;
+  }
+
+  .history__content h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .history__para {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* --- NAVBAR RESPONSIVE --- */
   .navbar {
     padding: 12px 18px;
     column-gap: 12px;
@@ -398,6 +512,22 @@
 
 /* Very small phones (<= 520px) */
 @media (max-width: 520px) {
+  /* --- HISTORY SECTION RESPONSIVE --- */
+  .history {
+    padding: 72px 0 72px;
+  }
+
+  .history__content h2 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .history__para {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  /* --- NAVBAR RESPONSIVE --- */
   .navbar {
     flex-direction: column;
     align-items: stretch;
@@ -448,6 +578,7 @@
     font-size: 16px;
     padding: 12px 14px;
   }
+<<<<<<< HEAD
 
   .phone-icon-container, .ringing-phone-icon {
     width: 22px; 
@@ -455,3 +586,6 @@
     font-size: 22px;
   }
 }
+=======
+}
+>>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf

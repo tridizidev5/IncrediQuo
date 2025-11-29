@@ -64,7 +64,7 @@ const CareerHero = () => {
                   name="Apply Job"
                   paddingXL="8.6vw"
                   paddingXM="24.5vw"
-                  widthL="10.5vw"
+                  widthL="10.21vw"
                   widthM="3.3vw"
                   bacgrounClr="#ffff"
                   bacgrounArrow="#022447"

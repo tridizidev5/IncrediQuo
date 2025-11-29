@@ -30,7 +30,19 @@ const CTA = () => {
               Get Started
             </button> */}
             <div onClick={() => setShowContact(true)}>
-            <Button name="Get Started" />
+            {/* <Button name="Get Started" /> */}
+              <Button
+              name="Get Started"
+              paddingXL="8.6vw"
+              paddingXM="24.5vw" // ← mobile padding
+              widthL="10.85vw" // ← THIS IS KEY: let content decide width
+              widthM="30.3vw" // ← auto width on mobile too
+              bacgrounClr="#022447"
+              bacgrounArrow="#ffffff"
+              colorArrow="#022447"
+              colorText="#ffffff"
+              colorTextHover="#022447"
+            />
           </div>
           </div>
         </div>
