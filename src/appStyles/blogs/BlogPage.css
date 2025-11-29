@@ -146,23 +146,8 @@
 /* submit button */
 
 .blog-contact__submit {
-  margin-top: 20px;
-  width: 20vw;
-  height: 45px;
-  border-radius: 6.39px;
-  border: none;
-  background: #001f5b;
-  color: #ffffff;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;            /* 🔥 NEW */
-  align-items: center;      /* 🔥 NEW */
-  justify-content: center;  /* 🔥 NEW */
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 12vw;
+  margin-top: -1.5vw;
 }
 
 .blog-contact__text {

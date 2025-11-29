@@ -1,10 +1,11 @@
 // src/components/HomePage/ContactSection.jsx
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";           // ✅ Portal
+import ReactDOM from "react-dom"; // ✅ Portal
 import { useLocation } from "react-router-dom";
 import "../../appStyles/HomePageStyles/ContactSection.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Button } from "../Button/Button";
 
 const ContactSection = ({ onClose }) => {
   const location = useLocation();
@@ -97,10 +98,7 @@ const ContactSection = ({ onClose }) => {
     <>
       {/* MAIN CONTACT MODAL */}
       <div className="contact-modal-backdrop" onClick={onClose}>
-        <div
-          className="contact-modal"
-          onClick={(e) => e.stopPropagation()}
-        >
+        <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
           <button className="contact-close" onClick={onClose}>
             ×
           </button>
@@ -151,13 +149,29 @@ const ContactSection = ({ onClose }) => {
               disabled={isSubmitting}
             />
 
-            <button
+            {/* <button
               type="submit"
               className="contact-submit-btn"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit"}
-            </button>
+            </button> */}
+            <div className="contact-submit-btn">
+              <Button
+                name={isSubmitting ? "Submitting..." : "Submit form"}
+                paddingXL="8.6vw"
+                paddingXM="24.5vw"
+                widthL="11.14vw"
+                widthM="30.3vw"
+                bacgrounClr="#ffffff"
+                bacgrounArrow="#022447"
+                colorArrow="#ffffff"
+                colorText="#022447"
+                colorTextHover="#ffffff"
+                type="submit" // ← This makes it work as form submit
+                disabled={isSubmitting} // ← Disable during submission
+              />
+            </div>
           </form>
         </div>
       </div>

@@ -148,10 +148,25 @@ const ContactFormSection = () => {
             <Button name="Submit form" />
           </div> */}
           <div className="contact-main__submit">
-            <Button
+            {/* <Button
               name={isSubmitting ? "Submitting..." : "Submit form"}
               disabled={isSubmitting}
-            />
+              
+            /> */}
+                          <Button
+                            name={isSubmitting ? "Submitting..." : "Submit form"}
+                            paddingXL="8.6vw"
+                            paddingXM="24.5vw"
+                            widthL="11.25vw"
+                            widthM="30.3vw"
+                            bacgrounClr="#022447"
+                            bacgrounArrow="#ffffff"
+                            colorArrow="#022447"
+                            colorText="#ffffff"
+                            colorTextHover="#022447"
+                            type="submit" // ← This makes it work as form submit
+                            disabled={isSubmitting} // ← Disable during submission
+                          />
           </div>
         </form>
 
