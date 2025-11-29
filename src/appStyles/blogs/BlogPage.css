@@ -141,21 +141,8 @@
 /* submit button */
 
 .blog-contact__submit {
-  margin-top: 20px;
-  width: 20vw;             /* Figma */
-  height: 45px;                /* Figma */
-  border-radius: 6.39px;       /* Figma */
-  border: none;
-  background: #001f5b;
-  color: #ffffff;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 12vw;
+  margin-top: -1.5vw;
 }
 
 /* text side */

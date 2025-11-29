@@ -121,8 +121,6 @@ const LoginPage = () => {
           <Button
               name="Login"
               type="submit"
-
-              // disabled={isSubmitting}
               paddingXL="7.1vw"
               paddingXM="18.5vw"
               widthL="6.7vw"

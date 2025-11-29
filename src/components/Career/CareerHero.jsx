@@ -32,7 +32,7 @@ const CareerHero = () => {
                   name="Apply Job"
                   paddingXL="8.6vw"
                   paddingXM="24.5vw"
-                  widthL="10.5vw"
+                  widthL="10.21vw"
                   widthM="3.3vw"
                   bacgrounClr="#ffff"
                   bacgrounArrow="#022447"
@@ -93,19 +93,18 @@ const CareerHero = () => {
             </span>
           </button> */}
 
-          <Button
-            name="Search....."
-            type="button"
-            paddingXL="8.6vw"
-            paddingXM="24.5vw"
-            widthL="10.5vw"
-            widthM="3.3vw"
-            bacgrounClr="#022447"
-            bacgrounArrow="#ffff"
-            colorArrow="#022447"
-            colorText="#ffff"
-            colorTextHover="#022447"
-          />
+                                                     <Button
+                                name="Search here"
+                                paddingXL="8.6vw"
+                                paddingXM="24.5vw" // ← mobile padding
+                                widthL="11.2vw" // ← THIS IS KEY: let content decide width
+                                widthM="30.3vw" // ← auto width on mobile too
+                                bacgrounClr="#022447"
+                                bacgrounArrow="#ffffff"
+                                colorArrow="#022447"
+                                colorText="#ffffff"
+                                colorTextHover="#022447"
+                              />
         </div>
       </div>
     </section>

@@ -84,8 +84,8 @@
 
 /************ SUBMIT BUTTON ************/
 .contact-submit-btn {
-  margin-top: 8px;
-  align-self: center;
+  margin-left: 9.5vw;
+  /* align-self: center;
   padding: 8px 26px;
   border-radius: 999px;
   border: none;
@@ -94,14 +94,14 @@
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease; */
 }
 
-.contact-submit-btn:hover {
+/* .contact-submit-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
   background-color: #ffe3e3;
-}
+} */
 
 .contact-submit-btn:active {
   transform: translateY(0);
