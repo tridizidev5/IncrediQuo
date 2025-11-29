@@ -44,14 +44,14 @@ const BannerStats = ({ onOpenContact }) => {
             <Button
               name="Get Started"
               paddingXL="8.6vw"
-              paddingXM="24.5vw"
-              widthL="10.7vw"
-              widthM="30.3vw"
-              bacgrounClr="#ffff"
+              paddingXM="24.5vw" // ← mobile padding
+              widthL="10.9vw" // ← THIS IS KEY: let content decide width
+              widthM="30.3vw" // ← auto width on mobile too
+              bacgrounClr="#ffffff"
               bacgrounArrow="#022447"
-              colorArrow="#ffff"
+              colorArrow="#ffffff"
               colorText="#022447"
-              colorTextHover="#ffff"
+              colorTextHover="#ffffff"
             />
           </div>
         </div>
