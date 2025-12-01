@@ -25,7 +25,7 @@
   font-size: 52px;
   font-weight: 700;
   line-height: 62px;
-  color: #0F0202;
+  color: #022447;
 }
 
 /* ---------- 3-column grid (1260 × 235) ---------- */
@@ -48,7 +48,7 @@
   width: 60px;
   height: 62px;
   border-radius: 7px;
-  background: #000000;
+  background-color: #022447;
   color: #ffffff;
   font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -67,7 +67,7 @@
   font-size: 20px;
   line-height: 30px;
   font-weight: 600;
-  color: #0F0202;
+  color: #022447;
 
   max-width: 300px;             /* ~299px text box from Figma */
   margin: 0 auto 8px;           /* center under number */
@@ -81,9 +81,10 @@
     "Segoe UI", sans-serif;
   font-size: 18px;              /* Figma: 18px */
   line-height: 26px;            /* Figma: 26px */
-  color: #2C2C2C;
+  color: #4b5670;
   font-weight: 400;
   text-align: center;
+  padding: 1vw;
 }
 
 /* ---------- Responsive ---------- */
@@ -155,11 +156,14 @@
 .how__item {
   position: relative;
   transition: transform 0.38s ease, box-shadow 0.38s ease;
+  padding: 0.9vw;
+  border-radius: 1vw;
 }
 
 .how__item:hover {
   transform: translateY(-10px) scale(1.08);
   box-shadow: 0 22px 48px rgba(15, 23, 42, 0.15);
+  background-color: #ffffff;
 }
 
 /* NUMBER BOX */
