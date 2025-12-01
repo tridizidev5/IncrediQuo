@@ -1,8 +1,3 @@
-/* ===========================
-    OUR FOUNDERS
-    =========================== */
-
-/* Base Section Styling (Kept mostly intact) */
 .core-team {
   padding: 30px 0 80px;
   background: #ffffff;
@@ -39,10 +34,6 @@
   column-gap: 76px;
   justify-content: center;
 }
-
-/* ===================================
-   FLIP CARD SETUP (The new structure)
-   =================================== */
 
 .core-team__card {
   /* Establish 3D perspective space */
@@ -160,22 +151,34 @@
 }
 
 /* ----------------- BACK FACE (Bio/Details) ----------------- */
+/* ----------------- BACK FACE (Bio/Details) ----------------- */
 
 .core-team__back {
-  transform: rotateY(180deg); /* Start rotated 180 degrees */
-  
-  /* Requested Styling */
-  background-color: #ffe9ec; /* Light Pink Background */
-  color: #022447; /* Dark Blue Text Color */
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
-}
+    transform: rotateY(180deg); /* Start rotated 180 degrees */
 
+    /* Requested Styling */
+    background-color: #ffe9ec; /* Light Pink Background */
+    color: #022447; /* Dark Blue Text Color */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* IMPORTANT: Start content from the top for scrolling */
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    
+    /* NEW: Enable vertical scrolling for large content */
+    overflow-y: scroll; 
+    
+    /* NEW: Hide scrollbar for Webkit browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* NEW: Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 .core-team__back-name {
     font-size: 28px;
     font-weight: 700;
