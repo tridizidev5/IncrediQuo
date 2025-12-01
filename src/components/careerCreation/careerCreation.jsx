@@ -152,6 +152,7 @@ const CareerCreation = () => {
                 <option value="Full Time">Full Time</option>
                 <option value="Part Time">Part Time</option>
                 <option value="Internship">Internship</option>
+                 <option value="Freelance">Freelance</option>
               </select>
             </div>
 
