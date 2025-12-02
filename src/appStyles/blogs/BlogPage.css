@@ -1,7 +1,7 @@
 .blog-page {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 140px 60px 120px;
+  padding: 180px 60px 120px;
   background: #ffffff;
 }
 
@@ -17,6 +17,7 @@
   border-radius: 70px;   
   object-fit: cover;
   margin: 0 auto;
+  padding-top: 10px;
 }
 
 .blog-article {
