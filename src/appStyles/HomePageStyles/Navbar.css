@@ -8,7 +8,8 @@
   flex-direction: column; 
   align-items: center; 
   padding: 10px 70px;
-  background: #ffe9ec; 
+  background: #ffffff; 
+  
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
   animation: navbarFadeDown 0.6s ease-out;
   box-sizing: border-box;
@@ -40,15 +41,26 @@
   height: 100%;
   z-index: -1; 
   
-  background-color: #ffe9ec; 
+  background-color: #ffffff; 
   background-image: 
-      radial-gradient(circle at 1px 1px, rgba(0, 33, 71, 0.4) 1px, transparent 0); 
+    /* Denser, slightly transparent pink dots */
+    radial-gradient(circle at 1px 1px, rgba(255, 106, 122, 0.7) 0.5px, transparent 0); 
   
-  background-size: 20px 20px; 
-  backdrop-filter: blur(8px); 
-  -webkit-backdrop-filter: blur(8px); 
+  background-size: 8px 8px; /* Closer dot spacing (more dots visible) */
+  backdrop-filter: blur(2px); /* Blurred lines effect */
+  -webkit-backdrop-filter: blur(2px); 
+  
   opacity: 0.98; 
+  
   transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+}
+/* --- NEW CONTACT ICON/POPUP STYLES --- */
+
+.contact-icon-popup-wrapper {
+  position: relative;
+  display: flex; 
+  align-items: center;
+  cursor: pointer;
 }
 
 /* Container for the icon (kept from original code but ensures Z-index) */
@@ -133,8 +145,8 @@
 }
 
 .navbar.scrolled {
-  background-color: #ffe9ec;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    background-color: #ffffff; /* Ensures consistency */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow when scrolled */
 }
 
 .navbar.scrolled .navbar__top-row::before {
@@ -354,10 +366,10 @@
   transform: translateX(-50%);
   margin-top: 6px;
   width: 404px;
-  height: 326px;
+  height: 320px;
   background: #002147; 
   border-radius: 34px;
-  padding: 37px 25px;
+  padding: 20px 25px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -370,7 +382,7 @@
   z-index: 1200;
   overflow-y: hidden;
   scrollbar-width: none;
-  
+
   backdrop-filter: none; 
   -webkit-backdrop-filter: none;
 }
@@ -396,7 +408,7 @@
 
 .dropdown__menu a:first-child {
   width: 355px;
-  height: 56px;
+  height: 48px;
   border-radius: 13px;
   display: flex;
   align-items: center;
@@ -407,7 +419,7 @@
 }
 
 .dropdown__menu a:hover {
-  background: #ffffff;
+  background: #ffe9f1;
   color: #002147;
 }
 
