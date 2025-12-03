@@ -378,7 +378,7 @@ margin-right: 20px; /* Example: Pushes the entire element 20px left */
   transform: translateX(-50%);
   margin-top: 6px;
   width: 404px;
-  height: 320px;
+  height: 288px;
   background: #002147; 
   border-radius: 34px;
   padding: 20px 25px;
@@ -619,7 +619,7 @@ margin-right: 20px; /* Example: Pushes the entire element 20px left */
   .dropdown__menu {
     position: fixed;
     top: auto; 
-    margin-top: 6px; 
+    margin-top: 100px; 
     left: 50%;
     transform: translateX(-50%);
     width: calc(100vw - 32px);
