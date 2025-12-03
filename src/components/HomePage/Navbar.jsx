@@ -1,154 +1,161 @@
-import React, { useState, useEffect, useRef } from "react";
-import { NavLink, useNavigate, useLocation } from "react-router-dom"; // Import useLocation
+// src/components/HomePage/Navbar.jsx
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
 import Logo from "../../assets/logo1.png";
-import { Button } from "../Button/Button"; 
+import { Button } from "../Button/Button";
 import { PiPhoneCall } from "react-icons/pi";
 
 const Navbar = () => {
-    const [isServicesOpen, setIsServicesOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-    const [isHovered, setIsHovered] = useState(false); 
-    const dropdownRef = useRef(null);
-    const contactRef = useRef(null); 
-    const navigate = useNavigate();
-    const location = useLocation(); // Initialize useLocation
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false); // clearer name
+  const dropdownRef = useRef(null);
+  const contactRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    // 1. Scroll Effect
-    useEffect(() => {
-        const handleScroll = () => {
-            const offset = window.scrollY;
-            setScrolled(offset > 20);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  // Scroll effect
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    // 2. Close Services Menu when route changes (FIX for Services menu not closing)
-    useEffect(() => {
+  // Close services menu when route changes
+  useEffect(() => {
+    setIsServicesOpen(false);
+  }, [location]);
+
+  // Click outside handlers (single consolidated handler)
+  useEffect(() => {
+    const handleDocClick = (e) => {
+      // close contact popup if click outside contactRef
+      if (isPopupOpen && contactRef.current && !contactRef.current.contains(e.target)) {
+        setIsPopupOpen(false);
+      }
+
+      // close services dropdown if click outside dropdownRef
+      if (isServicesOpen && dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsServicesOpen(false);
-    }, [location]); 
-
-    // 3. Close Contact Popup on outside click
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (contactRef.current && !contactRef.current.contains(event.target) && isHovered) {
-                setIsHovered(false);
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, [isHovered]);
-
-    // 4. Close Services Dropdown on outside click
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setIsServicesOpen(false);
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
-    const handleServiceClick = () => {
-        // Closes menu when a link *inside* the menu is clicked
-        setIsServicesOpen(false);
+      }
     };
 
-    // Main wrapper click handler: Navigates to /contact
-    const handleNavigate = () => {
-        // Only navigate if the popup is NOT currently open
-        if (!isHovered) {
-             navigate("/contact");
-        }
+    document.addEventListener("mousedown", handleDocClick);
+    document.addEventListener("touchstart", handleDocClick);
+    return () => {
+      document.removeEventListener("mousedown", handleDocClick);
+      document.removeEventListener("touchstart", handleDocClick);
     };
-    
-    // Icon click handler: Toggles the number popup
-    const handleIconClick = (e) => {
-        e.stopPropagation(); // Stop click from triggering the parent's handleNavigate
-        setIsHovered((prev) => !prev); // Toggle popup
-    };
+  }, [isPopupOpen, isServicesOpen]);
 
-    const navbarClass = `navbar ${scrolled ? 'scrolled' : ''}`;
-    return (
-        <header className={navbarClass}>
-            <div className="navbar__top-row">
-                <NavLink to="/" className="navbar__logo">
-                    <img src={Logo} alt="Logo" />
-                </NavLink>
+  // Toggle Services (keyboard friendly)
+  const toggleServices = useCallback(() => {
+    setIsServicesOpen((p) => !p);
+  }, []);
 
-                {/* --- MAIN CONTACT BUTTON WRAPPER (Handles navigation and contains the icon trigger) --- */}
-                <div
-                    className="navbar__button contact-button-wrapper"
-                    onClick={handleNavigate} // RESTORED: Navigate on button click
-                    ref={contactRef} 
-                    style={{ cursor: "pointer" }}
-                >
-                    
-                    {/* ICON TRIGGER AREA: Anchors the popup and handles hover/icon click */}
-                    <div 
-                        className="icon-popup-trigger-area"
-                        onMouseEnter={() => setIsHovered(true)} 
-                        onMouseLeave={() => setIsHovered(false)}
-                        onClick={handleIconClick} // Toggles popup
-                    >
-                        {/* Contact Icon */}
-                        <div className="phone-icon-container">
-                            <PiPhoneCall className="ringing-phone-icon" />
-                        </div>
+  // When clicking the contact wrapper we want to navigate to /contact
+  // BUT only if the click target is not the phone icon / popup or interactive child.
+  const handleContactWrapperClick = (e) => {
+    // If click comes from inside the phone popup or icon, do nothing (they handle themselves)
+    if (contactRef.current && contactRef.current.contains(e.target)) {
+      // If it was an actual click on the wrapper area outside interactive children,
+      // we still allow navigation below. The `contains` check lets us detect inner clicks.
+      const clickedInteractive = e.target.closest(".icon-popup-trigger-area, .contact-number-popup, .phone-icon-container, .ringing-phone-icon");
+      if (clickedInteractive) {
+        return; // do not navigate
+      }
+    }
+    // navigate to contact page
+    navigate("/contact");
+  };
 
-                        {/* --- Phone Number Popup Element (Anchored here) --- */}
-                        <div className={`contact-number-popup ${isHovered ? "show" : ""}`}>
-                            <div className="popup-caret"></div>
-                            +91 9849668819
-                        </div>
-                    </div> 
+  // Icon click toggles popup and prevents navigation
+  const handleIconToggle = (e) => {
+    e.stopPropagation();
+    setIsPopupOpen((p) => !p);
+  };
 
-                    {/* Contact Button */}
-                    <Button name="Contact Us" />
-                </div>
-                {/* --- END CONTACT BUTTON WRAPPER --- */}
+  // keyboard handlers for popup toggle
+  const handleIconKey = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setIsPopupOpen((p) => !p);
+    }
+  };
+
+  const navbarClass = `navbar ${scrolled ? "scrolled" : ""}`;
+
+  return (
+    <header className={navbarClass}>
+      <div className="navbar__top-row">
+        <NavLink to="/" className="navbar__logo" title="Go to home">
+          <img src={Logo} alt="IncrediQuo logo" />
+        </NavLink>
+
+        <div
+          className="navbar__button contact-button-wrapper"
+          onClick={handleContactWrapperClick}
+          ref={contactRef}
+          role="button"
+          aria-label="Open contact / go to contact page"
+        >
+          <div
+            className="icon-popup-trigger-area"
+            onClick={handleIconToggle}
+            onKeyDown={handleIconKey}
+            onMouseEnter={() => setIsPopupOpen(true)}
+            onMouseLeave={() => setIsPopupOpen(false)}
+            tabIndex={0}
+            role="button"
+            aria-haspopup="true"
+            aria-expanded={isPopupOpen}
+            title="Show phone number"
+          >
+            <div className="phone-icon-container" aria-hidden="true">
+              <PiPhoneCall className="ringing-phone-icon" />
             </div>
 
-            <nav className="navbar__links-row">
-                <NavLink to="/" end>
-                    Home
-                </NavLink>
-                <NavLink to="/about">About</NavLink>
+            <div className={`contact-number-popup ${isPopupOpen ? "show" : ""}`} role="dialog" aria-hidden={!isPopupOpen}>
+              <div className="popup-caret" />
+              <span className="contact-number">+91 9849668819</span>
+            </div>
+          </div>
 
-                <div
-                    className={`dropdown ${isServicesOpen ? "open" : ""}`}
-                    ref={dropdownRef}
-                >
-                    <span
-                        className="dropdown__title"
-                        onClick={() => setIsServicesOpen((prev) => !prev)}
-                    >
-                        Our Services
-                    </span>
+          <Button name="Contact Us" />
+        </div>
+      </div>
 
-                    <div className="dropdown__menu">
-                        <NavLink to="/services/transcription" onClick={handleServiceClick}>
-                            Transcription Services
-                        </NavLink>
-                        <NavLink to="/services/closed-captioning" onClick={handleServiceClick}>
-                            Closed Captioning &amp; Subtitling
-                        </NavLink>
-                        <NavLink to="/services/summarization" onClick={handleServiceClick}>
-                            Summarization
-                        </NavLink>
-                        <NavLink to="/services/additional-support" onClick={handleServiceClick}>
-                            Additional Support
-                        </NavLink>
-                    </div>
-                </div>
+      <nav className="navbar__links-row" aria-label="Primary navigation">
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/about">About</NavLink>
 
-                <NavLink to="/blogs">Blogs</NavLink>
-                <NavLink to="/careers">Careers</NavLink>
-            </nav>
-        </header>
-    );
+        <div className={`dropdown ${isServicesOpen ? "open" : ""}`} ref={dropdownRef}>
+          <span
+            className="dropdown__title"
+            onClick={toggleServices}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleServices(); } }}
+            role="button"
+            tabIndex={0}
+            aria-haspopup="menu"
+            aria-expanded={isServicesOpen}
+          >
+            Our Services
+          </span>
+
+          <div className="dropdown__menu" role="menu" aria-hidden={!isServicesOpen}>
+            <NavLink to="/services/transcription" onClick={() => setIsServicesOpen(false)}>Transcription Services</NavLink>
+            <NavLink to="/services/closed-captioning" onClick={() => setIsServicesOpen(false)}>Closed Captioning &amp; Subtitling</NavLink>
+            <NavLink to="/services/summarization" onClick={() => setIsServicesOpen(false)}>Summarization</NavLink>
+            <NavLink to="/services/additional-support" onClick={() => setIsServicesOpen(false)}>Additional Support</NavLink>
+          </div>
+        </div>
+
+        <NavLink to="/blogs">Blogs</NavLink>
+        <NavLink to="/careers">Careers</NavLink>
+      </nav>
+    </header>
+  );
 };
 
 export default Navbar;

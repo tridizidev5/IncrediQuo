@@ -1,4 +1,3 @@
-
 import React from "react";
 import "../../appStyles/HomePageStyles/BannerStats.css";
 import { Button } from "../Button/Button";
@@ -40,7 +39,7 @@ const BannerStats = ({ onOpenContact }) => {
               style={{
                 '--line-char-count': LINE1_TEXT.length,
                 '--line-time': `${TYPING_TIME_LINE1}s`,
-                '--line-delay': `${INITIAL_DELAY + 0.1}s`, 
+                '--line-delay': `${INITIAL_DELAY + 0.1}s`,
               }}
             >
               {LINE1_TEXT}
@@ -51,7 +50,7 @@ const BannerStats = ({ onOpenContact }) => {
               style={{
                 '--line-char-count': LINE2_TEXT.length,
                 '--line-time': `${TYPING_TIME_LINE2}s`,
-                '--line-delay': `${TYPING_TIME_LINE1 + INITIAL_DELAY + 0.1}s`, 
+                '--line-delay': `${TYPING_TIME_LINE1 + INITIAL_DELAY + 0.1}s`,
               }}
             >
               {LINE2_TEXT}
@@ -60,22 +59,24 @@ const BannerStats = ({ onOpenContact }) => {
                 style={{ 
                     '--cursor-start': `${CURSOR_START_TIME + 0.1}s`, 
                 }}
-              ></span>
+              />
             </span>
           </h2>
+
           <p>
             At IncrediQuo Solutions, we adapt to your pace not the other way
             around. Whether you need fast, real-time accuracy or structured
             delivery, our flexible service modes ensure your transcription and
             language solutions arrive exactly when you need them.
           </p>
+
           <div onClick={handleClick}>
             <Button
               name="Get Started"
               paddingXL="8.6vw"
-              paddingXM="24.5vw" // ← mobile padding
-              widthL="10.9vw" // ← THIS IS KEY: let content decide width
-              widthM="30.3vw" // ← auto width on mobile too
+              paddingXM="24.5vw"  /* mobile padding (JSX comment) */
+              widthL="10.9vw"    /* let content decide width */
+              widthM="30.3vw"    /* mobile width */
               bacgrounClr="#ffffff"
               bacgrounArrow="#022447"
               colorArrow="#ffffff"
@@ -88,12 +89,14 @@ const BannerStats = ({ onOpenContact }) => {
         <div className="banner__ticker">
           <div className="banner__ticker-track">
             <span>Real-time</span>
-            <span>Near Real-time, 24-hours</span>
+            <span>Near Real-time</span>
+            <span>24-hours</span>
             <span>Custom / As per Client Requirement</span>
 
             {/* duplicate items for infinite loop */}
             <span>Real-time</span>
-            <span>Near Real-time, 24-hours</span>
+            <span>Near Real-time</span>
+            <span>24-hours</span>
             <span>Custom / As per Client Requirement</span>
           </div>
         </div>
